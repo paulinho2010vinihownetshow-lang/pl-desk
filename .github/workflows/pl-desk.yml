@@ -1,0 +1,15 @@
+name: PL Desk - Gerar programa
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gerar-pl-desk:
+    permissions:
+      contents: write
+      actions: read
+    uses: ./.github/workflows/flutter-build.yml
+    secrets: inherit
+    with:
+      upload-artifact: true
+      upload-tag: "pl-desk"
